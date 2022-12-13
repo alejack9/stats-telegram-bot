@@ -1,0 +1,3 @@
+psutil==5.9.4
+python-telegram-bot==13.15
+redis==4.4.0

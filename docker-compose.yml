@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  redis-bot:
+    container_name: redis-pybot
+    image: redis:7-alpine
+    volumes:
+      - redis-pybot-data:/data
+    restart: unless-stopped
+    command: redis-server --loglevel warning
+  rasp-stats-pybot:
+    depends_on: ["redis-bot"]
+    container_name: rasp-stats-pybot
+    build: .
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Rome
+      - REDIS_HOST=redis-pybot
+      - REDIS_PORT=6379
+    env_file:
+      - .env
+
+volumes:
+  redis-pybot-data:
