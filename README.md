@@ -1,6 +1,6 @@
 # System Stats Bot
 
-A simple telegram bot that sends the current stats (CPU & RAM usage and disk quota) and allows the admin to grant access to other users after their request.
+A simple telegram bot that sends the current stats (CPU, RAM and swap usage and disk quota) and allows the admin to grant access to other users after their request.
 
 ## Run
 
