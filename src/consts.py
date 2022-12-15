@@ -1,4 +1,12 @@
+import logging
 import os
 
-ADMIN_ID = int(os.getenv('ADMIN_ID'), '-1')
-COMMANDS_DIR = 'commands'
+class Consts:
+    ADMIN_ID = -1
+
+    def set_admin(value):
+        if Consts.ADMIN_ID != -1:
+            raise Exception('ADMIN_ID already set.')
+        Consts.ADMIN_ID = value
+
+    COMMANDS_DIR = 'commands'
